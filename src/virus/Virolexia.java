@@ -1,6 +1,7 @@
 package virus;
 
 import people.Child;
+import results.Results;
 
 public final class Virolexia extends Virus{
     public Virolexia() {
@@ -14,5 +15,6 @@ public final class Virolexia extends Virus{
         System.out.println("Infecting " + personName + " with Virolexia...");
         person.setStatus("Infected");
         person.setPhlegm(true);
+        Results.infectionCount++;
     }
 }

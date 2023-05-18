@@ -1,6 +1,8 @@
+import com.sun.jdi.IntegerValue;
 import people.Adult;
 import people.Child;
 import people.Elder;
+import results.Results;
 import virus.Acutus;
 import virus.Virolexia;
 import virus.Virus;
@@ -47,21 +49,15 @@ public class Main {
         System.out.println("---------------------------------------------");
     }
 
-    public static ArrayList<Integer> runSimulation(ArrayList<Child> children, ArrayList<Elder> elders, ArrayList<Adult> adults, Virus virus, int days) {
+    public static void runSimulation(ArrayList<Child> children, ArrayList<Elder> elders, ArrayList<Adult> adults, Virus virus, int days) {
         //TODO - RUN THE SIMULATION ITERATING days TIMES
-        int infectedCount = 0;
-        int healedCount = 0;
-        int deadCount = 0;
-        ArrayList<Integer> results = new ArrayList<Integer>();
 
         for (int i = 0; i < days; i++) {
             for (Child child : children) {
                 // before infection
                 child.tryAvoidPhysicalContact();
-
                 // infection
                 virus.infect(child);
-
                 // after infection
                 child.tryToHeal();
             }
@@ -76,6 +72,7 @@ public class Main {
 
                 // after infection
                 adult.tryToHeal();
+
             }
 
             for (Elder elder : elders) {
@@ -91,14 +88,19 @@ public class Main {
                 elder.tryDie();
             }
         }
-        results.add(infectedCount);
-        results.add(healedCount);
-        results.add(deadCount);
 
-        return results;
     }
 
-    public static void getPeople(int n) {
-        //TODO - CREATE LIST OF PEOPLE
+    public static void getChildren(int n) {
+        //TODO - CREATE LIST OF CHILDREN
     }
+
+    public static void getAdults(int n) {
+        //TODO - CREATE LIST OF ADULTS
+    }
+
+    public static void getElders(int n) {
+        //TODO - CREATE LIST OF ELDERS
+    }
+
 }

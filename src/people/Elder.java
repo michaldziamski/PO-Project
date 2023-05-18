@@ -1,5 +1,7 @@
 package people;
 
+import results.Results;
+
 public class Elder extends Adult{
     private String name;
     private int healChance = 30;
@@ -22,6 +24,10 @@ public class Elder extends Adult{
     }
     public void tryDie() {
         //TODO - RANDOM CHANCE OF DYING
-        this.isDead = true;
+        boolean deadDrawed = true;
+        if (deadDrawed) {
+            this.isDead = true;
+            Results.deadCount++;
+        }
     }
 }

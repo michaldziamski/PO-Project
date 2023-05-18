@@ -1,6 +1,7 @@
 package virus;
 
 import people.Child;
+import results.Results;
 
 public final class Acutus extends Virus{
     public Acutus() {
@@ -14,5 +15,6 @@ public final class Acutus extends Virus{
         System.out.println("Infecting " + personName + " with Acutus...");
         person.setStatus("Infected");
         person.setHeartache(true);
+        Results.infectionCount++;
     }
 }

@@ -1,5 +1,7 @@
 package people;
 
+import results.Results;
+
 public class Child {
     private String name;
     private int healChance = 25;
@@ -58,6 +60,7 @@ public class Child {
         boolean healDrawed = true;
         if(healDrawed) {
             setStatus("Healed");
+            Results.healedCount++;
         }
 
     }
