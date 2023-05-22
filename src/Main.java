@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-
+        //da da daro
 
         Adult adult = new Adult("Daniel");
         Child child = new Child("John");
